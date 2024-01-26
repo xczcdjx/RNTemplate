@@ -8,6 +8,7 @@ buildscript {
         kotlinVersion = "1.8.0"
     }
     repositories {
+        maven{ url 'https://maven.aliyun.com/repository/google'}//重点关注这一行
         google()
         mavenCentral()
     }
@@ -17,5 +18,11 @@ buildscript {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
     }
 }
-
+allprojects {
+    repositories {
+        maven{ url 'https://maven.aliyun.com/repository/google'} //重点关注这一行
+        google()
+        jcenter()
+    }
+}
 apply plugin: "com.facebook.react.rootproject"
